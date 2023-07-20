@@ -12,8 +12,8 @@ end
 
 def second_anagram?(str1, str2) # n^2
   str1.each_char do |char| # n
-    index = str2.index(char)
-    if index != nil #n
+    index = str2.index(char) #n
+    if index != nil
       str2[index] = "" 
     else
       return false
@@ -24,10 +24,10 @@ end
 
 
 
-def third_anagram?(str1, str2)#2n + 2(nlogn) = O(nlogn)
+def third_anagram?(str1, str2)#3n + 2(nlogn) = O(nlogn)
   sort1 = str1.chars.sort # n + (nlogn)
   sort2 = str2.chars.sort # n + (nlogn)
-  sort1 == sort2
+  sort1 == sort2 #n
 
 end
 
@@ -40,7 +40,7 @@ def fourth_anagram?(str1, str2) #2n = O(n)
   str2.each_char do |char| #n
     hash1[char] -= 1
   end
-  hash1.values.all? {|val| val == 0} #n (for bonus)
+  hash1.values.all? {|val| val == 0} #n + n (for bonus)
 end
 
 p fourth_anagram?("gizmo", "sally")

@@ -29,6 +29,22 @@ def okay_two_sum?(arr, target_sum) #n + n log n == n log n
     false
 end
 
+
+
+
+def good_two_sum?(arr, target_sum)
+    hash = {}
+    arr.each do |num| #n
+       hash[num] = true
+    end
+    arr.each do |num|#n
+      diff = target_sum - num
+      if hash[diff] == true && diff != num
+        return true
+      end 
+    end
+    false
+end
 arr = [0, 1, 5, 7]
-p okay_two_sum?(arr, 6) # => should be true
-p okay_two_sum?(arr, 10) # => should be false
+p good_two_sum?(arr, 6) # => should be true
+p good_two_sum?(arr, 10) # => should be false
