@@ -33,11 +33,19 @@ end
 # end
 
 
-def largest_contiguous_subsum(arr)
- 
+def largest_contiguous_subsum(arr) #n
+  largest = arr[0]
+  current = 0
   arr.each do |num|
-    
+    current += num
+    if current > largest
+      largest = current
+      current = 0 if current < 0
+    else
+      current = 0 if current < 0
+    end
   end
+  largest
 end
 
 list = [2, 3, -6, 7,-6,7]
