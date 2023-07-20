@@ -34,17 +34,10 @@ end
 
 
 def largest_contiguous_subsum(arr)
- largest_sum = arr[0]
-  arr.inject do |current_sum, el|
+ 
+  arr.each do |num|
     
-    if current_sum > largest_sum
-     largest_sum = current_sum
-     current_sum += el
-    else
-      current_sum + el 
-    end
   end
-  largest_sum
 end
 
 list = [2, 3, -6, 7,-6,7]
